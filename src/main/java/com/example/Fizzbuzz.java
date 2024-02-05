@@ -14,19 +14,22 @@ public class Fizzbuzz {
     }
   };
 
+  private static String fizzBuzzOne(final int i){
+    StringBuilder sb = new StringBuilder();
+
+    INTEGERS_TO_STRINGS.forEach((key, value) -> {
+      if (i % key == 0) sb.append(value);
+    });
+
+    return sb.toString();
+  }
+
   public static List<String> fizzBuzz(int n) {
     List<String> result = new ArrayList<>();
     for (int i = 0; i < n; i++) {
-      StringBuilder sb = new StringBuilder();
-      final int currVal = i;
+      String finalString = fizzBuzzOne(i);
 
-      INTEGERS_TO_STRINGS.forEach((key, value) -> {
-          if (currVal % key == 0) sb.append(value);
-      });
-
-      String finalString = sb.toString();
-
-      result.add(finalString.isEmpty() ? "" + i : finalString);
+      result.add(finalString.isEmpty() ? Integer.toString(i) : finalString);
     }
 
     return result;
