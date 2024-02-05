@@ -26,7 +26,7 @@ public class Fizzbuzz {
 
   public static List<String> fizzBuzz(int n) {
     List<String> result = new ArrayList<>();
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i <= n; i++) {
       String finalString = fizzBuzzOne(i);
 
       result.add(finalString.isEmpty() ? Integer.toString(i) : finalString);
